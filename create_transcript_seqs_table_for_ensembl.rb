@@ -10,12 +10,12 @@ id = start_id
 ff.each do |f|
   id += 1
   transcript_id = f.definition
-  if   transcripit_id =~ /^transcript:\S/
+  if   transcript_id =~ /^transcript:\S/
     transcript_id = "#{transcript_id.slice(/^(\S+)/, 1)}"
   else
     transcript_id = "transcript:#{transcript_id.slice(/^(\S+)/, 1)}"
   end
-  if   transcripit_id =~ /^\S+\.\d+$/
+  if   transcript_id =~ /^\S+\.\d+$/
     transcript_id = "#{transcript_id.slice(/^(\S+)\.\d+$/, 1)}"
   end
 
