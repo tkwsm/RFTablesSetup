@@ -19,7 +19,7 @@ ff.each do |f|
     transcript_id = "#{transcript_id.slice(/^(\S+)\.\d+$/, 1)}"
   end
 
-  print [ project_id, transcript_id, f.seq ].join("\t"), "\t", "#{Time.new.to_s.slice(/(.+)\s\S+$/, 1)}\t#{Time.new.to_s.slice(/(.+)\s\S+$/, 1)}\n"
+  print [ id, project_id, transcript_id, f.seq ].join("\t"), "\t", "#{Time.new.to_s.slice(/(.+)\s\S+$/, 1)}\t#{Time.new.to_s.slice(/(.+)\s\S+$/, 1)}\n"
 
 end
 
