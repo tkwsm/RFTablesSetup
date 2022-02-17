@@ -16,6 +16,7 @@ gphase  = "."  ;
 geneid  = ""  ; 
 gattributes = {} ;
 
+id = start_id
 a = []
 ARGF.each do |x|
   next if x !~ /\S/
@@ -42,8 +43,9 @@ ARGF.each do |x|
 #  p gattributes
   geneid = gattributes["gene_id"]
   gattributes.each_key do |tag|
+    id     += 1
     val = gattributes[ tag ]
-    print "#{project_id}\t#{geneid}\t#{tag}\t#{val}\n"
+    print "#{id}\t#{project_id}\t#{transcriptid}\t#{tag}\t#{val}\t#{Time.new.to_s.slice(/(.+)\s\S+$/, 1)}\t#{Time.new.to_s.slice(/(.+)\s\S+$/, 1)}\n"
   end
   if geneid == nil
     STDERR.puts "Something Error"
